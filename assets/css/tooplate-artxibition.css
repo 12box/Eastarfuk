@@ -1436,10 +1436,19 @@ Rent Venue Page
 
 .page-heading-rent-venue {
   background-image: url(../images/airplane6.jpg);
-  background-size: contain;
+  background-size: cover; /* 이미지가 화면을 가득 채우도록 변경 */
+  background-position: center; /* 이미지가 중앙에 위치하도록 설정 */
   background-repeat: no-repeat;
-  padding: 445px 0%;
+  padding: 200px 0; /* 화면 크기에 따라 패딩 조절 */
   text-align: center;
+}
+
+/* 스마트폰을 위한 반응형 디자인 */
+@media (max-width: 767px) {
+  .page-heading-rent-venue {
+    background-size: cover; /* 모바일에서 화면 크기에 맞게 이미지 크기 조정 */
+    padding: 150px 0; /* 스마트폰에서 패딩을 좀 더 줄여서 화면을 최적화 */
+  }
 }
 
 .page-heading-rent-venue h2 {
