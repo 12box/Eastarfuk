@@ -59,7 +59,7 @@ https://www.tooplate.com/view/2125-artxibition
           </div>
           <div class="col-lg-6 col-sm-6">
             <div class="text-button">
-              <a href="rent-venue.html"
+              <a href="assets/images/discountcoupon.png" class="download-link"
                 >今すぐクーポンをダウンロードしてください。
                 <i class="fa fa-arrow-right"></i
               ></a>
@@ -69,6 +69,35 @@ https://www.tooplate.com/view/2125-artxibition
       </div>
     </div>
 
+    <script>
+      document.querySelectorAll('.download-link').forEach((link) => {
+        link.addEventListener('click', async function (event) {
+          event.preventDefault();
+
+          const imageUrl = this.querySelector('img').src; // 현재 클릭된 요소의 이미지 가져오기
+
+          try {
+            // 이미지 파일 가져오기
+            const response = await fetch(imageUrl);
+            const blob = await response.blob();
+
+            // Blob을 사용해 가상의 다운로드 링크 생성
+            const blobUrl = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = blobUrl;
+            a.download = 'discountcoupon.png';
+            document.body.appendChild(a);
+            a.click();
+
+            // 다운로드 후 링크 제거
+            document.body.removeChild(a);
+            URL.revokeObjectURL(blobUrl);
+          } catch (error) {
+            console.error('파일 다운로드 실패:', error);
+          }
+        });
+      });
+    </script>
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
       <div class="container">
