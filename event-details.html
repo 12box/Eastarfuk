@@ -59,10 +59,10 @@ https://www.tooplate.com/view/2125-artxibition
           </div>
           <div class="col-lg-6 col-sm-6">
             <div class="text-button">
-              <a href="assets/images/discountcoupon.png" class="download-link"
-                >今すぐクーポンをダウンロードしてください。
-                <i class="fa fa-arrow-right"></i
-              ></a>
+              <a href="assets/images/discountcoupon.png" class="download-link">
+                今すぐクーポンをダウンロードしてください。
+                <i class="fa fa-arrow-right"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -74,7 +74,8 @@ https://www.tooplate.com/view/2125-artxibition
         link.addEventListener('click', async function (event) {
           event.preventDefault();
 
-          const imageUrl = this.querySelector('img').src; // 현재 클릭된 요소의 이미지 가져오기
+          // <a> 태그의 href 속성에서 이미지 URL 가져오기
+          const imageUrl = this.href;
 
           try {
             // 이미지 파일 가져오기
@@ -98,6 +99,7 @@ https://www.tooplate.com/view/2125-artxibition
         });
       });
     </script>
+
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
       <div class="container">
