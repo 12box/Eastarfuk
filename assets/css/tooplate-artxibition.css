@@ -668,9 +668,18 @@ banner
   background-image: url(../images/airplane2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center; /* 이미지의 중앙이 화면에 맞게 표시되도록 */
   text-align: center;
   padding: 270px 0px 210px 0px;
   position: relative;
+}
+
+/* 스마트폰 화면에서 스타일 수정 */
+@media screen and (max-width: 768px) {
+  .main-banner {
+    padding: 150px 0px 150px 0px; /* 스마트폰에서 패딩을 조정하여 배경 이미지가 적절하게 표시되도록 */
+    background-position: center top; /* 화면 상단에 맞춰서 배경 이미지 위치 조정 */
+  }
 }
 
 .main-banner h6 {
